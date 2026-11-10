@@ -388,6 +388,22 @@ Feature: Basic Distance Matrix
             | 3 | 399.9 | 500   | 0     | 100.1 |
             | 4 | 299.9 | 399.9 | 699.8 | 0     |
 
+        When I request a travel distance matrix I should get
+            |   | 1     |
+            | 1 | 0     |
+            | 2 | 699.8 |
+            | 3 | 399.9 |
+            | 4 | 299.9 |
+
+        When I request a travel distance matrix I should get
+            |   | 1     | 2     | 3     | 4     |
+            | 2 | 699.8 | 0     | 299.9 | 399.9 |
+
+        When I request a travel distance matrix I should get
+            |   | 1     | 2     | 3     |
+            | 2 | 699.8 | 0     | 299.9 |
+            | 4 | 299.9 | 399.9 | 699.8 |
+
 
     Scenario: Testbot - Travel distance matrix based on segment durations
         Given the profile file
